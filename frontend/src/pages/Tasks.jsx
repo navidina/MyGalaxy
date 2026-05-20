@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Plus, Clock, AlertCircle } from 'lucide-react';
+import { Plus, Clock } from 'lucide-react';
 
 const Tasks = () => {
   const [activeTab, setActiveTab] = useState('pending');
