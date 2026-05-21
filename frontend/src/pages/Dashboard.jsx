@@ -1,136 +1,149 @@
 const Dashboard = () => {
   return (
-    <>
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-gradient mb-2">کهکشان من</h1>
-        <p className="text-on-surface-variant font-body-lg text-body-lg">خلاصه وضعیت سیستم شما در یک نگاه.</p>
-      </div>
+    <div className="flex flex-col gap-6 w-full max-w-md mx-auto">
 
-      {/* 2x2 Analytics Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-        {/* Widget 1: Sessions */}
-        <div className="glass-card rounded-2xl p-6 flex flex-col justify-between h-36 hover:bg-surface-container-high/80 transition-all cursor-default border-primary/10 group">
-          <div className="flex justify-between items-start">
-            <span className="font-label-sm text-label-sm text-on-surface-variant">تعداد جلسات</span>
-            <span className="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">timer</span>
-          </div>
-          <div className="font-headline-lg text-headline-lg text-on-surface font-bold">۱۲۴</div>
-        </div>
-
-        {/* Widget 2: Focus Time */}
-        <div className="glass-card rounded-2xl p-6 flex flex-col justify-between h-36 hover:bg-surface-container-high/80 transition-all cursor-default border-primary/10 group">
-          <div className="flex justify-between items-start">
-            <span className="font-label-sm text-label-sm text-on-surface-variant">زمان تمرکز</span>
-            <span className="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">psychology</span>
-          </div>
-          <div className="font-headline-lg text-headline-lg text-on-surface font-bold">۳۲<span className="text-sm font-normal text-outline ml-1">ساعت</span></div>
-        </div>
-
-        {/* Widget 3: Knowledge Base */}
-        <div className="glass-card rounded-2xl p-6 flex flex-col justify-between h-36 hover:bg-surface-container-high/80 transition-all cursor-default border-primary/10 group">
-          <div className="flex justify-between items-start">
-            <span className="font-label-sm text-label-sm text-on-surface-variant">رشد دانش</span>
-            <span className="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">auto_graph</span>
-          </div>
-          <div className="font-headline-lg text-headline-lg text-on-surface font-bold flex items-center">
-            +۱۵<span className="text-sm font-normal text-tertiary ml-1">%</span>
-          </div>
-        </div>
-
-        {/* Widget 4: Remaining Tasks */}
-        <div className="glass-card rounded-2xl p-6 flex flex-col justify-between h-36 hover:bg-surface-container-high/80 transition-all cursor-default border-primary/10 group">
-          <div className="flex justify-between items-start">
-            <span className="font-label-sm text-label-sm text-on-surface-variant">تسک‌های باقی‌مانده</span>
-            <span className="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">fact_check</span>
-          </div>
-          <div className="font-headline-lg text-headline-lg text-on-surface font-bold">۷</div>
+      {/* Quick Input Box */}
+      <div className="flex items-center bg-surface-container-low rounded-2xl border border-outline-variant/20 p-2 shadow-sm">
+        <button className="w-10 h-10 bg-primary/20 text-primary rounded-xl flex items-center justify-center ml-2">
+          <span className="material-symbols-outlined">send</span>
+        </button>
+        <input
+          type="text"
+          placeholder="چیزی بنویس یا بگو... (مثلاً: قرار ملاقات ف"
+          className="flex-1 bg-transparent text-on-surface outline-none text-sm font-label-md px-2 placeholder-on-surface-variant/70"
+        />
+        <div className="w-10 h-10 flex items-center justify-center text-on-surface-variant cursor-pointer">
+          <span className="material-symbols-outlined">edit</span>
         </div>
       </div>
 
-      {/* Bento Grid for deeper content */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Large Card: Recent Insights (Spans 2 columns on desktop) */}
-        <div className="md:col-span-2 glass-panel rounded-[2rem] p-8 min-h-[340px] flex flex-col">
-          <div className="flex justify-between items-center mb-6 border-b border-outline-variant/30 pb-4">
-            <h2 className="font-headline-md text-headline-md text-on-surface">بینش‌های اخیر</h2>
-            <button className="text-primary hover:text-primary-fixed-dim transition-colors"><span className="material-symbols-outlined">more_horiz</span></button>
+      {/* AI Insight Card */}
+      <div className="glass-panel rounded-2xl p-5 border border-outline-variant/30 flex flex-col gap-4">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center shadow-inner">
+            <span className="material-symbols-outlined text-primary text-xl">psychology</span>
           </div>
+          <h2 className="font-headline-sm text-sm font-bold text-on-surface">بینش هوش مصنوعی: بهینه‌سازی جریان کاری</h2>
+        </div>
+        <p className="text-sm text-on-surface-variant leading-relaxed text-justify px-1">
+          بر اساس تحلیل هفته گذشته، اوج تمرکز شما بین ساعت <strong className="text-on-surface">۹ تا ۱۱ صبح</strong> است. پیشنهاد می‌شود وظایف سنگین پروژه «آلفا» را به این بازه منتقل کنید تا <strong className="text-secondary">۲۰٪ بازدهی</strong> بیشتری داشته باشید.
+        </p>
+        <div className="flex justify-end gap-3 mt-1">
+          <button className="px-4 py-2 rounded-lg bg-surface-container-highest text-on-surface text-xs font-label-sm border border-outline-variant/20 hover:bg-surface-container-highest/80 transition-colors">
+            تحلیل زمانی
+          </button>
+          <button className="px-4 py-2 rounded-lg bg-surface-container-highest text-on-surface text-xs font-label-sm border border-outline-variant/20 hover:bg-surface-container-highest/80 transition-colors">
+            توصیه اولویت‌بندی
+          </button>
+        </div>
+      </div>
 
-          <div className="flex-1 space-y-4">
-            {/* List Item */}
-            <div className="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/20">
-              <div className="flex flex-col">
-                <span className="font-label-md text-label-md text-on-surface">تحلیل پروژه آلفا تکمیل شد</span>
-                <span className="text-sm text-outline">۲ ساعت پیش</span>
+      {/* Task Lists Section */}
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center gap-2 mb-1 px-1">
+          <span className="material-symbols-outlined text-on-surface">list</span>
+          <h2 className="font-headline-sm text-sm font-bold text-on-surface">لیست‌های وظایف</h2>
+        </div>
+
+        {/* Overdue Card */}
+        <div className="glass-panel rounded-2xl p-0 border border-error/30 overflow-hidden">
+          <div className="flex items-center justify-between p-4 bg-error/5 border-b border-error/10">
+            <h3 className="text-sm font-bold text-error">منقضی شده (Overdue)</h3>
+            <span className="w-6 h-6 rounded-full bg-error/20 text-error text-xs flex items-center justify-center font-bold">۳</span>
+          </div>
+          <div className="flex flex-col">
+            <div className="flex items-center justify-between p-4 border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-error"></div>
+                <span className="text-sm text-on-surface">ارسال پروپوزال نهایی مشتری</span>
               </div>
-              <span className="material-symbols-outlined text-primary">analytics</span>
+              <span className="text-xs text-error">دیروز</span>
             </div>
-
-            <div className="w-full h-px bg-outline-variant/10"></div>
-
-            {/* List Item */}
-            <div className="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/20">
-              <div className="flex flex-col">
-                <span className="font-label-md text-label-md text-on-surface">یادداشت‌های جلسه دپارتمان استخراج شد</span>
-                <span className="text-sm text-outline">۵ ساعت پیش</span>
+            <div className="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-error"></div>
+                <span className="text-sm text-on-surface">پرداخت فاکتور سرور</span>
               </div>
-              <span className="material-symbols-outlined text-secondary">summarize</span>
+              <span className="text-xs text-error">۲ روز پیش</span>
             </div>
           </div>
         </div>
 
-        {/* Side Card: Quick Actions or Status */}
-        <div className="glass-card rounded-2xl p-6 min-h-[300px] flex flex-col">
-          <h2 className="font-headline-md text-headline-md text-on-surface mb-6">وضعیت سیستم</h2>
-          <div className="flex-1 flex flex-col items-center justify-center relative">
-            {/* Simulated Data Ring */}
-            <div className="w-32 h-32 rounded-full border-4 border-surface-container-high border-t-tertiary border-r-tertiary animate-[spin_4s_linear_infinite] flex items-center justify-center">
-              <div className="w-28 h-28 rounded-full border-2 border-surface-container-high border-t-tertiary border-r-tertiary animate-[spin_6s_linear_infinite] flex items-center justify-center">
-                <div className="w-22 h-22 rounded-full border-2 border-surface-container-high border-b-primary border-l-primary animate-[spin_4s_linear_infinite_reverse]"></div>
+        {/* Upcoming Card */}
+        <div className="glass-panel rounded-2xl p-0 border border-primary/20 overflow-hidden">
+          <div className="flex items-center justify-between p-4 bg-primary/5 border-b border-primary/10">
+            <h3 className="text-sm font-bold text-primary">آتی (Upcoming)</h3>
+            <span className="w-6 h-6 rounded-full bg-primary/20 text-primary text-xs flex items-center justify-center font-bold">۱۲</span>
+          </div>
+          <div className="flex flex-col">
+            <div className="flex items-center justify-between p-4 border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-primary"></div>
+                <span className="text-sm text-on-surface">جلسه بازبینی تیم فنی</span>
               </div>
+              <span className="text-xs text-outline">امروز، ۱۴:۰۰</span>
             </div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="font-headline-md text-headline-md text-tertiary">۹۸٪</span>
-              <span className="text-xs text-outline">بهینگی</span>
+            <div className="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-primary"></div>
+                <span className="text-sm text-on-surface">بررسی گزارش ماهانه مالی</span>
+              </div>
+              <span className="text-xs text-outline">فردا</span>
             </div>
           </div>
         </div>
       </div>
 
-      <section className="mt-8">
-        <div className="glass-panel rounded-[2rem] p-8 flex flex-col">
-          <div className="flex justify-between items-center mb-6 border-b border-outline-variant/30 pb-4">
-            <h2 className="font-headline-md text-headline-md text-on-surface">یادآوری‌های آینده</h2>
-            <button className="text-secondary hover:text-secondary-fixed-dim transition-colors flex items-center gap-1 font-label-md">
-                مشاهده همه
-                <span className="material-symbols-outlined text-sm">arrow_back_ios</span>
-            </button>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="glass-card p-4 rounded-xl flex items-center gap-4 hover:bg-surface-container-high transition-colors cursor-pointer">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                <span className="material-symbols-outlined">event_repeat</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-label-md text-on-surface">جلسه بازبینی هفتگی</span>
-                <span className="text-xs text-outline">فردا، ساعت ۱۰:۰۰ صبح</span>
-              </div>
-            </div>
+      {/* Recent Knowledge Findings */}
+      <div className="flex flex-col gap-4 mt-2">
+        <div className="flex items-center gap-2 mb-1 px-1">
+          <span className="material-symbols-outlined text-on-surface">menu_book</span>
+          <h2 className="font-headline-sm text-sm font-bold text-on-surface">آخرین یافته‌های دانش</h2>
+        </div>
 
-            <div className="glass-card p-4 rounded-xl flex items-center gap-4 hover:bg-surface-container-high transition-colors cursor-pointer">
-              <div className="w-12 h-12 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
-                <span className="material-symbols-outlined">assignment_late</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-label-md text-on-surface">موعد تحویل پروپوزال</span>
-                <span className="text-xs text-outline">امروز، ساعت ۱۷:۰۰</span>
-              </div>
+        {/* Knowledge Card 1 */}
+        <div className="glass-panel rounded-2xl p-5 border border-outline-variant/20 flex flex-col gap-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary text-lg">lightbulb</span>
+              <h3 className="text-sm font-bold text-on-surface">تکنیک‌های یادگیری عمیق</h3>
             </div>
+            <span className="text-xs text-outline">۱۰ دقیقه پیش</span>
+          </div>
+          <p className="text-xs text-on-surface-variant leading-relaxed text-justify">
+            استفاده از الگوریتم‌های جدید در پیش‌بینی رفتار کاربر می‌تواند دقت سیستم را تا ۱۵ درصد افزایش دهد. منابع اصلی در گیت‌هاب موجود است...
+          </p>
+          <div className="flex gap-2 mt-2 justify-end">
+            <span className="px-3 py-1 rounded-md bg-surface-container-high text-on-surface text-[10px] border border-outline-variant/10">#تحقیق</span>
+            <span className="px-3 py-1 rounded-md bg-surface-container-high text-on-surface text-[10px] border border-outline-variant/10">#هوش_مصنوعی</span>
           </div>
         </div>
-      </section>
-    </>
+
+        {/* Knowledge Card 2 */}
+        <div className="glass-panel rounded-2xl p-5 border border-outline-variant/20 flex flex-col gap-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-on-surface text-lg">description</span>
+              <h3 className="text-sm font-bold text-on-surface">خلاصه جلسه معماری</h3>
+            </div>
+            <span className="text-xs text-outline">دیروز</span>
+          </div>
+          <p className="text-xs text-on-surface-variant leading-relaxed text-justify">
+            تصمیم گرفته شد که از میکروسرویس‌های توزیع‌شده برای مقیاس‌پذیری بهتر استفاده کنیم. داکیومنت کامل در Notion آپدیت شد.
+          </p>
+          <div className="flex gap-2 mt-2 justify-end">
+            <span className="px-3 py-1 rounded-md bg-surface-container-high text-on-surface text-[10px] border border-outline-variant/10">#معماری</span>
+            <span className="px-3 py-1 rounded-md bg-surface-container-high text-on-surface text-[10px] border border-outline-variant/10">#تکنولوژی</span>
+          </div>
+        </div>
+
+        {/* Show all Button */}
+        <button className="w-full py-3 mt-2 rounded-xl border border-dashed border-outline-variant/30 text-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors">
+          مشاهده همه کارت‌های دانش
+        </button>
+      </div>
+
+    </div>
   );
 };
 
